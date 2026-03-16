@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    bat 'docker build -t jenkins-sample-app .'
+                    sh 'docker build -t jenkins-sample-app .'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo 'Stopping old containers if any...'
-                    bat '''
+                    sh '''
                     @echo off
                     setlocal
                     set containers=
